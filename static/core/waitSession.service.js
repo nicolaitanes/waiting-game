@@ -177,12 +177,12 @@ angular
                         posted = server.postDwell(room, seatKey, secondsIn);
                         secondsIn = 0;
                     }
-                    if ( secondsInOut >= (POST_DELAY/1000) ) {
+                    if ( secondsInOut >= 0.5*(POST_DELAY/1000) ) {
                         posted.then(function() {
                             this.listRoom();
                         }.bind(this));
                         if ( secondsOut > 0 ) {
-                            secondsOut -= (POST_DELAY/1000);
+                            secondsOut = Math.max(0, secondsOut - .5*(POST_DELAY/1000));
                         }
                     }
                 }.bind(this);
