@@ -1,0 +1,97 @@
+body {
+}
+body > div {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: space-between;
+    background: #060110;
+    color: #ccc;
+}
+a {
+    color: #cfc;
+}
+a:link {
+    color: #cfc;
+}
+a:hover {
+    color: #cfc;
+}
+a:visited {
+    color: #ada;
+}
+h1 {
+    text-align: center;
+}
+
+wait-game-outside {
+    flex: 1 1 auto;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: stretch;
+    justify-content: space-around;
+}
+wait-game-room, wait-game-room>div, wait-game-room>div>div, .entrybox {
+    flex: 1 1 auto;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: stretch;
+    justify-content: space-around;
+}
+
+.entrybox {
+    align-items: center;
+    flex: 0 0 auto;
+}
+.entrycaption {
+    font-size: 70%;
+}
+.entrybox input {
+    text-align: center;
+}
+
+.mainAction {
+    text-align: center;
+}
+.mainAction > button {
+    font-size: 120%;
+}
+
+#players {
+    flex: 1 1 auto;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: stretch;
+    overflow: auto;
+    margin-left: .25em;
+    margin-right: .25em;
+}
+wait-game-player {
+    flex: 0 0 auto;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: baseline;
+    justify-content: space-between;
+}
+.playerSelf {
+    font-weight: bold;
+}
+.playerAbsent {
+    color: #888;
+}
+
+#roomControl {
+    flex: 0 0 auto;
+    border: 1px solid #999;
+    padding: .25em;
+    margin: .25em;
+}
+#roomControls {
+    flex: 0 0 auto;
+    flex-flow: row nowrap;
+}

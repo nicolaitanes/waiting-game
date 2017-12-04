@@ -1,0 +1,8 @@
+{
+    "name": "waiting-static",
+    "version": "0.0.1",
+    "dependencies": {
+        "angular": "1.6.7",
+        "angular-route": "^1.6.7"
+    }
+}

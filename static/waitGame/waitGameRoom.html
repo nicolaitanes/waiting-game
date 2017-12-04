@@ -1,0 +1,58 @@
+<h1>The Waiting Game</h1>
+<div ng-switch on="$ctrl.state">
+  <div ng-switch-when="Entering">
+    <div class="blurb">
+      Objective: to out-wait all opponents. No screen lock or other apps allowed.
+    </div>
+    <div class="entrybox">
+      <div class="entrycaption">
+        Your Name
+      </div>
+      <div class="entryslot">
+        <form ng-submit="$ctrl.startWaiting()">
+          <input ng-model="$ctrl.name">
+        </form>
+      </div>
+    </div>
+    <div class="mainAction">
+      <button ng-click="$ctrl.startWaiting()">Start</button>
+    </div>
+  </div>
+
+  <div ng-switch-when="In">
+    <div id="players">
+      <wait-game-player player="player" class="{{player.playerClass}}" ng-repeat="player in $ctrl.players">
+      </wait-game-player>
+    </div>
+    <div class="mainAction">
+      <button ng-click="$ctrl.quit()">Quit</button>
+    </div>
+  </div>
+
+  <div ng-switch-when="Quitting">
+    <div>Please wait...</div>
+    <div class="mainAction">
+      <button ng-click="$ctrl.unquit()">Cancel</button>
+    </div>
+  </div>
+
+  <div ng-switch-when="Current">
+    <div id="players">
+      <wait-game-player player="player" class="{{player.playerClass}}" ng-repeat="player in $ctrl.players">
+      </wait-game-player>
+    </div>
+    <div>
+      This game has finished. <button ng-click="$ctrl.startWaiting()">Play again</button>
+    </div>
+  </div>
+</div>
+
+<div id="roomControl">
+  <div id="roomControls">
+    {{$ctrl.state}} room: {{$ctrl.room}}
+    <button ng-click="$ctrl.exitRoom()">Exit</button>
+  </div>
+  <div>
+    Other players can join at {{$ctrl.url}}
+  </div>
+</div>

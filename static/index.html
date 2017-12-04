@@ -1,0 +1,31 @@
+<!DOCTYPE html> 
+<html ng-app="waitGameApp">
+  <head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <script src="node_modules/angular/angular.js"></script>
+    <script src="node_modules/angular-route/angular-route.js"></script>
+    <script src="app.module.js"></script>
+    <script src="app.config.js"></script>
+    <script src="core/core.module.js"></script>
+    <script src="core/waitSession.module.js"></script>
+    <script src="core/waitSession.service.js"></script>
+    <script src="waitGame/waitGame.module.js"></script>
+    <script src="waitGame/waitGameOutside.component.js"></script>
+    <script src="waitGame/waitGameRoom.component.js"></script>
+    <script src="waitGame/waitGamePlayer.component.js"></script>
+    <link rel="stylesheet" href="waiting.css" type="text/css" charset="utf-8">
+  </head>
+  <body>
+
+    <div ng-view></div>
+<!--
+pw from env
+docs
+tests
+mandelics
+github
+-->
+  </body>
+</html>

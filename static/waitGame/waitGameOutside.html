@@ -1,0 +1,18 @@
+<h1>The Waiting Game</h1>
+<div class="blurb">
+  Objective: to out-wait all opponents. No screen lock or other apps allowed.
+</div>
+<div class="entrybox">
+  <div class="entrycaption">
+    Room Name
+  </div>
+  <div class="entryslot">
+    <form ng-submit="$ctrl.enterRoom()">
+      <input ng-model="$ctrl.room">
+    </form>
+  </div>
+</div>
+<div class="mainAction">
+  <button ng-click="$ctrl.enterRoom()">Join Room</button>
+</div>
+
