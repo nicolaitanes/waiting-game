@@ -16,23 +16,28 @@ define("waitserv", ["waitdb", "express", "body-parser"], (waitdb, express, bodyP
         };
     }
     
+    const MAX_ROOM_LEN = 32;
+    function parseRoom(s) {
+        return (s || '').substring(0, MAX_ROOM_LEN);
+    }
+    
     router.post('/name', (req, res) => {
         waitdb.setName(req.body.seatKey||'', req.body.name||'')
             .then(() => res.jsonp({}))
             .catch(cleanup(res));
     });
     router.post('/dwell', (req, res) => {
-        waitdb.postDwell(req.body.room||'', req.body.seatKey||'', +req.body.seconds)
+        waitdb.postDwell(parseRoom(req.body.room), req.body.seatKey||'', +req.body.seconds)
             .then(() => res.jsonp({}))
             .catch(cleanup(res));
     });
     router.post('/quit', (req, res) => {
-        waitdb.quit(req.body.room||'', req.body.seatKey||'')
+        waitdb.quit(parseRoom(req.body.room), req.body.seatKey||'')
             .then(() => res.jsonp({}))
             .catch(cleanup(res));
     });
     router.get('/room', (req, res) => {
-        waitdb.getRoom(req.query.room||'', req.query.seatKey||'')
+        waitdb.getRoom(parseRoom(req.query.room), req.query.seatKey||'')
             .then(room => res.jsonp(room))
             .catch(cleanup(res));
     });
