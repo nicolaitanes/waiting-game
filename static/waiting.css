@@ -35,6 +35,7 @@ wait-game-outside {
     flex-flow: column nowrap;
     align-items: stretch;
     justify-content: space-around;
+    max-width: 100vw;
 }
 wait-game-room, wait-game-room>div, wait-game-room>div>div, .entrybox {
     flex: 1 1 auto;
@@ -42,6 +43,7 @@ wait-game-room, wait-game-room>div, wait-game-room>div>div, .entrybox {
     flex-flow: column nowrap;
     align-items: stretch;
     justify-content: space-around;
+    max-width: 100vw;
 }
 
 .entrybox {
