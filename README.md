@@ -8,3 +8,5 @@ which also serves the user interface, found in static/.
 To get started, run 'npm install' in the main directory and in static/,
 create the database described in waitdb.js,
 and install waitserv's Router in an express http/https/spdy server.
+
+Try it at https://mandelics.com/waiting/
